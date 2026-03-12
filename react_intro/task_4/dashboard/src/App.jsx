@@ -1,7 +1,8 @@
-import './App.css'
-import holbertLogo from "./assets/holberton-logo.jpg";
-import Notifications from './Notifications.jsx';
-import { getCurrentYear, getFooterCopy } from './utils.jsx';
+import { getCurrentYear, getFooterCopy } from './utils';
+import Notifications from './Notifications';
+import image3 from './assets/holberton-logo.jpg';
+import './App.css';
+
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
         <Notifications />
       </div>
       <div className='App-header'>
-        <img src={holbertLogo} alt='holberton logo' />
+        <img src={image3} alt='holberton logo' />
         <h1 style={{ color: "#e1003c" }}>School dashboard</h1>
       </div>
 
@@ -23,7 +24,7 @@ function App() {
         <label htmlFor="password">password</label>
         <input type="password" id="password"></input>
 
-        <button type="submit">Ok</button>
+        <button type="submit">OK</button>
       </div>
       <div className='App-footer'>
         <p>Copyright {getCurrentYear()} -  {getFooterCopy(true)}</p>
