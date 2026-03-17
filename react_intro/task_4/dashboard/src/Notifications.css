@@ -3,3 +3,14 @@
     padding: 5px;
     overflow: hidden;
 }
+.notification-items button {
+  float: right;
+}
+
+[data-priority="default"] {
+  color: blue;
+}
+
+[data-priority="urgent"] {
+  color: red;
+}
