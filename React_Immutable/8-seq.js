@@ -1,21 +1,14 @@
 /* eslint-disable */
-const { Seq } = require('immutable');
+import { Seq } from 'immutable';
 
-function capitalize(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
+export default function printBestStudents(grades) {
+  const best = Seq(grades)
+    .filter((student) => student.score >= 70)
+    .map((student) => ({
+      ...student,
+      firstName: student.firstName.charAt(0).toUpperCase() + student.firstName.slice(1),
+      lastName: student.lastName.charAt(0).toUpperCase() + student.lastName.slice(1),
+    }));
+
+  console.log(best.toJS());
 }
-
-function printBestStudents(grades) {
-  const result = Seq(grades)
-    .filter(student => student.score >= 70)
-    .map(student => ({
-      score: student.score,
-      firstName: capitalize(student.firstName),
-      lastName: capitalize(student.lastName),
-    }))
-    .toJS();
-
-  console.log(result);
-}
-
-module.exports = printBestStudents;
